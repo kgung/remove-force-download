@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "No Forcedownload",
+  "version": "1.0",
+
+  "description": "Remove ?forcedownload=1 query parameter on any website",
+
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
+
+  "icons": {
+    "48": "icons/no-download-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["dist/content.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["dist/background.js"]
+  }
+}
